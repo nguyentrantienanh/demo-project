@@ -7,19 +7,25 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
       padding: 20px;
     }
-    h1, h2 {
+    h1 {
       color: #007acc;
+      text-align: center;
+    }
+    h2 {
+      color: #007acc;
+      margin-top: 30px;
     }
     pre {
       background: #eee;
       padding: 10px;
       border-left: 4px solid #007acc;
       overflow-x: auto;
+      border-radius: 5px;
     }
     .step {
       background: #fff;
