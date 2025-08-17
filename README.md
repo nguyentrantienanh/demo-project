@@ -1,36 +1,116 @@
-# Demo Project - Workflow Hàng Ngày
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Project - Git Workflow Hàng Ngày</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #007acc;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-left: 4px solid #007acc;
+      overflow-x: auto;
+    }
+    .step {
+      background: #fff;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .step-number {
+      font-weight: bold;
+      color: #fff;
+      background: #007acc;
+      padding: 5px 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
 
-## Checklist Git
+  <h1>Demo Project - Git Workflow Hàng Ngày</h1>
 
-# 1️⃣ Cập nhật dự án từ main
-git checkout main
-git pull origin main
+  <div class="step">
+    <span class="step-number">1</span>
+    <strong>Cập nhật nhánh gốc (frontend / backend / data)</strong>
+    <pre>
+git checkout &lt;frontend|backend|data&gt;
+git pull origin &lt;frontend|backend|data&gt;
+    </pre>
+  </div>
 
-# 2️⃣ Tạo nhánh mới cho công việc hôm nay
-git checkout -b <tên-nhánh-mới>
+  <div class="step">
+    <span class="step-number">2</span>
+    <strong>Tạo nhánh mới cho công việc hôm nay</strong>
+    <pre>
+git checkout -b &lt;tên-nhánh-mới&gt;
+
 # Ví dụ:
-# git checkout -b feature-login
-# git checkout -b fix-navbar-bug
+# git checkout frontend
+# git checkout -b feature/frontend-login
+    </pre>
+  </div>
 
-# 3️⃣ Làm việc và commit
+  <div class="step">
+    <span class="step-number">3</span>
+    <strong>Làm việc và commit</strong>
+    <pre>
 git add .
 git commit -m "Mô tả thay đổi chi tiết"
+    </pre>
+  </div>
 
-# 4️⃣ Cập nhật nhánh main trước khi push/merge
-git checkout main
-git pull origin main
-git checkout <tên-nhánh>
-git merge main    # hoặc git rebase main
+  <div class="step">
+    <span class="step-number">4</span>
+    <strong>Cập nhật nhánh gốc trước khi push/merge</strong>
+    <pre>
+git checkout &lt;frontend|backend|data&gt;
+git pull origin &lt;frontend|backend|data&gt;
+git checkout &lt;tên-nhánh-mới&gt;
+git merge &lt;frontend|backend|data&gt;
+# Hoặc git rebase &lt;frontend|backend|data&gt;
+    </pre>
+  </div>
 
-# 5️⃣ Push nhánh làm việc lên remote
-git push origin <tên-nhánh>
+  <div class="step">
+    <span class="step-number">5</span>
+    <strong>Push nhánh làm việc lên remote</strong>
+    <pre>
+git push origin &lt;tên-nhánh-mới&gt;
+    </pre>
+  </div>
 
-# 6️⃣ Merge nhánh vào main khi hoàn tất
-git checkout main
-git merge <tên-nhánh>
-# Nếu có conflict, chỉnh sửa file, git add <file>, git commit
-git push origin main
+  <div class="step">
+    <span class="step-number">6</span>
+    <strong>Merge nhánh làm việc vào nhánh gốc khi hoàn tất</strong>
+    <pre>
+git checkout &lt;frontend|backend|data&gt;
+git merge &lt;tên-nhánh-mới&gt;
+git push origin &lt;frontend|backend|data&gt;
+    </pre>
+  </div>
 
-# 7️⃣ Dọn dẹp nhánh dư sau merge
-git branch -d <tên-nhánh>           # xóa local
-git push origin --delete <tên-nhánh> # xóa remote
+  <div class="step">
+    <span class="step-number">7</span>
+    <strong>Dọn dẹp nhánh dư sau merge</strong>
+    <pre>
+git branch -d &lt;tên-nhánh-mới&gt;           # xóa local
+git push origin --delete &lt;tên-nhánh-mới&gt; # xóa remote
+    </pre>
+  </div>
+
+</body>
+</html>
